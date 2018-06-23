@@ -1,21 +1,15 @@
 #include <stdio.h>
-
-int func1()
+#include <string.h>
+#include <stdlib.h>
+int main(int argc, char **argv)
 {
-    printf("Fail..\n");
-    return -1;
-}
-int func2()
-{
-    printf("Success!!!..\n");
-    return 1;
-}
-
-int main()
-{
-    char buffer[20];
-    scanf("%s", buffer);
+    char buffer[256];
+    if (argc != 2)
+    {
+        exit(0);
+    }
+    printf("%p\n", buffer);
+    strcpy(buffer, argv[1]);
     printf("%s\n", buffer);
-    func1();
     return 0;
 }
